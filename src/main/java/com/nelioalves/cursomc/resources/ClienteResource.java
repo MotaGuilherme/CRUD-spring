@@ -49,7 +49,7 @@ public class ClienteResource {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<ClienteDTO>> findAll() {
 		List<Cliente> list = service.findAll();
-		List<ClienteDTO> listDto = list.stream().map(obj -> new ClienteDTO(obj)).collect(Collectors.toList());
+		List<ClienteDTO> listDto = list.stream().map(ClienteDTO::new).collect(Collectors.toList());
 
 		return ResponseEntity.ok().body(listDto);
 	}
