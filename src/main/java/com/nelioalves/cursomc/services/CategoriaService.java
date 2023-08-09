@@ -3,10 +3,8 @@ package com.nelioalves.cursomc.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.nelioalves.cursomc.domain.Cliente;
 import com.nelioalves.cursomc.dto.CategoriaDTO;
 import com.nelioalves.cursomc.services.exceptions.DataIntegrityException;
-import com.sun.javafx.scene.traversal.Direction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
