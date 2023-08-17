@@ -26,5 +26,4 @@ public abstract class AbstratractEmailService implements EmailService {
         sm.setText(obj.toString());
         return sm;
     }
-
 }
