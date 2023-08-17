@@ -108,5 +108,17 @@ public class ItemPedido implements Serializable {
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		final StringBuffer sb = new StringBuffer("ItemPedido{");
+		sb.append(getProduto().getNome());
+		sb.append(", Qte: ");
+		sb.append(getQuantidade());
+		sb.append(", Preço unitário: ");
+		sb.append(getPreco());
+		sb.append(", Subtotal: ");
+		sb.append("\n");
+		return sb.toString();
+	}
 }
