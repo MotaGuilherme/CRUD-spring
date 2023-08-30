@@ -2,6 +2,7 @@ package com.nelioalves.cursomc.services;
 
 import com.nelioalves.cursomc.services.exceptions.FileException;
 import org.apache.commons.io.FilenameUtils;
+import org.imgscalr.Scalr;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -62,6 +63,6 @@ public class ImageService {
      }
 
      public BufferedImage resize(BufferedImage sourceImg, int size) {
-         return Scarl.resize(sourceImg, Scalr.Method.ULTRA_QUALITY, size);
+         return Scalr.resize(sourceImg, Scalr.Method.ULTRA_QUALITY, size);
      }
 }
