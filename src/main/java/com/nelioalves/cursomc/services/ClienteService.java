@@ -1,5 +1,7 @@
 package com.nelioalves.cursomc.services;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +29,7 @@ import org.springframework.stereotype.Service;
 import com.nelioalves.cursomc.domain.Cliente;
 import com.nelioalves.cursomc.repositories.ClienteRepository;
 import com.nelioalves.cursomc.services.exceptions.ObjectNotFoundException;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class ClienteService {
@@ -42,6 +45,9 @@ public class ClienteService {
 
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+
+	@Autowired
+	private S3Service s3Service;
 
 
 	public Cliente find(Integer id) {
@@ -114,5 +120,9 @@ public class ClienteService {
 		}
 
 		return cli;
+	}
+
+	public URI uploadProfilePicture(MultipartFile multipartFile) throws IOException {
+		return s3Service.uploadFile(multipartFile);
 	}
 }
